@@ -1,7 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(AppSK.Startup))]
+[assembly: OwinStartup(typeof(AppSK.Startup))]
 namespace AppSK
 {
     public partial class Startup
