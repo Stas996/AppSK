@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSK", "AppSK\AppSK.csproj", "{5E3B2512-D680-4898-BD5C-7BDB7A078AE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSK.BLL", "AppSK.BLL\AppSK.BLL.csproj", "{43C6BCDA-E9C4-4B30-A1B8-EB138E682BE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSK.DAL", "AppSK.DAL\AppSK.DAL.csproj", "{CAEE4522-1570-4242-AD4C-307A76677C5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5E3B2512-D680-4898-BD5C-7BDB7A078AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E3B2512-D680-4898-BD5C-7BDB7A078AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E3B2512-D680-4898-BD5C-7BDB7A078AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C6BCDA-E9C4-4B30-A1B8-EB138E682BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C6BCDA-E9C4-4B30-A1B8-EB138E682BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C6BCDA-E9C4-4B30-A1B8-EB138E682BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C6BCDA-E9C4-4B30-A1B8-EB138E682BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAEE4522-1570-4242-AD4C-307A76677C5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAEE4522-1570-4242-AD4C-307A76677C5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAEE4522-1570-4242-AD4C-307A76677C5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAEE4522-1570-4242-AD4C-307A76677C5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

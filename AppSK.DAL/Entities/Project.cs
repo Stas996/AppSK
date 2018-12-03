@@ -1,0 +1,19 @@
+﻿using System;
+
+namespace AppSK.DAL.Entities
+{
+    public class Project
+    {
+        public int ManagerId { get; set; }
+
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        public DateTime StartDate { get; set; }
+
+        public DateTime FinishDate { get; set; }
+
+        public int Investments { get; set; }
+    }
+}
