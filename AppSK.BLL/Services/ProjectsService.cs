@@ -16,7 +16,8 @@ namespace AppSK.BLL.Services
 
         public IQueryable<Project> GetProjects()
         {
-            return _projectsRepository.GetAll();
+            var projects = _projectsRepository.GetAll();
+            return projects;
         }
 
         public void Delete(int id)

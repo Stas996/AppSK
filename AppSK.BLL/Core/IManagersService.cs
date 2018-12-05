@@ -9,7 +9,9 @@ namespace AppSK.BLL.Core
 
         Manager GetManager(int id);
 
-        int Save(Manager mark);
+        Manager GetManagerByUserId(string id);
+
+        int Save(Manager manager);
 
         void Delete(int id);
     }

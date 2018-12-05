@@ -7,13 +7,13 @@ namespace AppSK.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Init : IMigrationMetadata
+    public sealed partial class ChangeUserModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeUserModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812032341226_Init"; }
+            get { return "201812050319402_ChangeUserModel"; }
         }
         
         string IMigrationMetadata.Source

@@ -56,16 +56,20 @@
   <ItemGroup>
     <Compile Include="Context\ApplicationDbContext.cs" />
     <Compile Include="Entities\Base\BaseEntity.cs" />
-    <Compile Include="Entities\Base\Person.cs" />
     <Compile Include="Entities\Enums\ProjectTypes.cs" />
+    <Compile Include="Entities\Enums\RoleNames.cs" />
     <Compile Include="Entities\Expert.cs" />
     <Compile Include="Entities\Manager.cs" />
     <Compile Include="Entities\Mark.cs" />
     <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Migrations\201812032341226_Init.cs" />
-    <Compile Include="Migrations\201812032341226_Init.Designer.cs">
-      <DependentUpon>201812032341226_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201812042228049_Init.cs" />
+    <Compile Include="Migrations\201812042228049_Init.Designer.cs">
+      <DependentUpon>201812042228049_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812050319402_ChangeUserModel.cs" />
+    <Compile Include="Migrations\201812050319402_ChangeUserModel.Designer.cs">
+      <DependentUpon>201812050319402_ChangeUserModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,8 +81,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812032341226_Init.resx">
-      <DependentUpon>201812032341226_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812042228049_Init.resx">
+      <DependentUpon>201812042228049_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812050319402_ChangeUserModel.resx">
+      <DependentUpon>201812050319402_ChangeUserModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

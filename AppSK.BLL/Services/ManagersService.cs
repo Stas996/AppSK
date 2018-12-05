@@ -19,6 +19,11 @@ namespace AppSK.BLL.Services
             return _managersRepository.GetAll();
         }
 
+        public Manager GetManagerByUserId(string id)
+        {
+            return _managersRepository.GetBy(x => x.UserId == id).FirstOrDefault();
+        }
+
         public void Delete(int id)
         {
             _managersRepository.Delete(id);

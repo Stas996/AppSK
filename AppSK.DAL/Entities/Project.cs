@@ -1,6 +1,7 @@
 ﻿using AppSK.DAL.Entities.Base;
 using AppSK.DAL.Entities.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace AppSK.DAL.Entities
 {
@@ -21,5 +22,7 @@ namespace AppSK.DAL.Entities
         public DateTime FinishDate { get; set; }
 
         public int Investments { get; set; }
+
+        public List<Mark> Marks { get; set; }
     }
 }

@@ -26,13 +26,18 @@ namespace AppSK.DAL.Context
             modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
 
             modelBuilder.Entity<Manager>().HasRequired(p => p.User);
+            modelBuilder.Entity<Manager>()
+                .HasMany(x => x.Projects)
+                .WithRequired(x => x.Manager);
 
             modelBuilder.Entity<Expert>().HasRequired(p => p.User);
+            modelBuilder.Entity<Expert>()
+                .HasMany(x => x.Marks)
+                .WithRequired(x => x.Expert);
 
-            modelBuilder.Entity<Mark>().HasRequired(p => p.Expert);
-            modelBuilder.Entity<Mark>().HasRequired(p => p.Project);
-
-            modelBuilder.Entity<Project>().HasRequired(p => p.Manager);
+            modelBuilder.Entity<Project>()
+                .HasMany(p => p.Marks)
+                .WithRequired(x => x.Project);
         }
 
         public static ApplicationDbContext Create()
