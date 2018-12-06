@@ -23,6 +23,7 @@ namespace AppSK.BLL.Services
         public void Delete(int id)
         {
             _projectsRepository.Delete(id);
+            _projectsRepository.Save();
         }
 
         public Project GetProject(int id)

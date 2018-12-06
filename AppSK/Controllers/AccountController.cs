@@ -22,18 +22,10 @@ namespace AppSK.Controllers
         private readonly IManagersService _managersService;
         private readonly IExpertsService _expertsService;
 
-        public AccountController()
-        {
-        }
-
         public AccountController(
-            ApplicationUserManager userManager,
-            ApplicationSignInManager signInManager,
             IManagersService managersService,
             IExpertsService expertsService)
         {
-            UserManager = userManager;
-            SignInManager = signInManager;
             _managersService = managersService;
             _expertsService = expertsService;
         }
@@ -87,7 +79,7 @@ namespace AppSK.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Index", "Projects");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

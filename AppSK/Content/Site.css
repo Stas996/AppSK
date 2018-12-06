@@ -22,3 +22,22 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.ms-center-form {
+    width: 500px;
+    margin: 50px auto;
+}
+
+.ms-center-form input,
+.ms-center-form select {
+    max-width: 450px !important;
+}
+
+.ms-btn-inline {
+    width: 170px;
+    margin: 0 5px;
+}
+
+.ms-cell-action {
+    width: 40px;
+}

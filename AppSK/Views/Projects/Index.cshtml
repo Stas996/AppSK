@@ -1,7 +1,18 @@
-﻿@model IEnumerable<AppSK.Models.Projects.ProjectViewModel>
+﻿@model IEnumerable<AppSK.Models.Projects.ProjectModel>
 @{
     ViewBag.Title = "Управление проектами";
 }
 
 <h2>Управление проектами</h2>
 <p>@Html.ActionLink("Добавить проект", "Create", "Projects")</p>
+<hr />
+@if (Model.Count() > 0)
+{
+    @ProjectHelpers.ProjectsList(Model);
+}
+else
+{
+    <div class="ms-empty">
+        <span class="text-center">Список проектов пуст</span>
+    </div>
+}

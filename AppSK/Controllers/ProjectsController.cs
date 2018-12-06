@@ -22,11 +22,20 @@ namespace AppSK.Controllers
             _managersService = managersService;
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
             var projects = _projectsService.GetProjects().ToList();
-            var viewProjects = Mapper.Map<List<ProjectViewModel>>(projects);
+            var viewProjects = Mapper.Map<List<ProjectModel>>(projects);
             return View(viewProjects);
+        }
+
+        [HttpGet]
+        public ActionResult Details(int projectId)
+        {
+            var project = _projectsService.GetProject(projectId);
+            var viewProject = Mapper.Map<ProjectModel>(project);
+            return View(viewProject);
         }
 
         [HttpGet]
@@ -35,8 +44,31 @@ namespace AppSK.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Edit(int projectId)
+        {
+            var project = _projectsService.GetProject(projectId);
+            var viewProject = Mapper.Map<ProjectModel>(project);
+            return View(viewProject);
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int projectId)
+        {
+            _projectsService.Delete(projectId);
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
-        public ActionResult Create(ProjectCreateModel projectModel)
+        public ActionResult Update(ProjectModel projectModel)
+        {
+            var project = Mapper.Map<Project>(projectModel);
+            var projects = _projectsService.Save(project);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Create(ProjectModel projectModel)
         {
             var manager = GetCurrentManager();
             projectModel.ManagerId = manager.Id;

@@ -1,0 +1,14 @@
+﻿@model AppSK.Models.Projects.ProjectModel
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+<div>
+    @Model.Description
+</div>
+<hr />
+@Html.ActionLink("Редактировать", "Edit", "Projects", new { projectId = Model.Id }, new { @class = "btn-sm btn-success" })
+<span> | </span>
+@Html.ActionLink("Удалить", "Delete", "Projects", new { projectId = Model.Id }, new { @class = "btn-sm btn-danger" })

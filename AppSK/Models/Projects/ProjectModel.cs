@@ -1,11 +1,16 @@
 ﻿using AppSK.DAL.Entities.Enums;
+using AppSK.Models.Managers;
 using System;
 
 namespace AppSK.Models.Projects
 {
-    public class ProjectCreateModel
+    public class ProjectModel
     {
+        public int Id { get; set; }
+
         public int ManagerId { get; set; }
+
+        public ManagerItemModel Manager { get; set; }
 
         public ProjectTypes Type { get; set; }
 
@@ -18,5 +23,6 @@ namespace AppSK.Models.Projects
         public DateTime FinishDate { get; set; }
 
         public int Investments { get; set; }
+
     }
 }

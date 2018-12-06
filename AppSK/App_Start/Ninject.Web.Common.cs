@@ -10,6 +10,8 @@ namespace AppSK.App_Start
     using AppSK.BLL.Services;
     using AppSK.DAL.Context;
     using AppSK.DAL.Repositories;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
@@ -59,6 +61,7 @@ namespace AppSK.App_Start
             kernel.Bind<IProjectsService>().To<ProjectsService>().InRequestScope();
             kernel.Bind<IMarksService>().To<MarksService>().InRequestScope();
             kernel.Bind<IManagersService>().To<ManagersService>().InRequestScope();
+            kernel.Bind<IExpertsService>().To<ExpertsService>().InRequestScope();
         }        
     }
 }

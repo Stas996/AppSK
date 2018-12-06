@@ -1,0 +1,37 @@
+﻿@model AppSK.Models.Projects.ProjectModel
+
+@if (Model.Manager != null)
+{
+    <div>
+        <strong>Менеджер:</strong> @Model.Manager.Fullname
+    </div>
+}
+
+<div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @placeholder = "Название проекта", @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.TextAreaFor(model => model.Description, new { @placeholder = "Описание проекта", @class = "form-control", @rows = "10" })
+        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.EditorFor(model => model.Investments, new { htmlAttributes = new { @placeholder = "Инвестиции", @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Investments, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @placeholder = "Начало", @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.EditorFor(model => model.FinishDate, new { htmlAttributes = new { @placeholder = "Конец", @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.FinishDate, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <div>
+            <input type="submit" value="Создать" class="btn btn-success" />
+        </div>
+    </div>
+</div>
