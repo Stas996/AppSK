@@ -26,6 +26,11 @@ namespace AppSK.Controllers
         {
             var mark = _marksService.GetMarkByProject(projectId);
             var viewMark = Mapper.Map<MarkModel>(mark);
+            if (viewMark == null)
+            {
+                viewMark = new MarkModel();
+            }
+            viewMark.ProjectId = projectId;
             return View(viewMark);
         }
 
@@ -34,6 +39,11 @@ namespace AppSK.Controllers
         {
             var mark = _marksService.GetMarkByStock(stockId);
             var viewMark = Mapper.Map<MarkModel>(mark);
+            if (viewMark == null)
+            {
+                viewMark = new MarkModel();
+            }
+            viewMark.StockId = stockId;
             return View(viewMark);
         }
 
@@ -45,7 +55,7 @@ namespace AppSK.Controllers
             if (mark.IsNew)
             {
                 var expert = GetCurrentExpert();
-                markModel.ExpertId = expert.Id;
+                mark.ExpertId = expert.Id;
             }
 
             var projects = _marksService.Save(mark);

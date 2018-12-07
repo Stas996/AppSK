@@ -1,5 +1,6 @@
 ﻿using AppSK.BLL.Core;
 using AppSK.DAL.Entities;
+using AppSK.Models.Marks;
 using AppSK.Models.Stocks;
 using AutoMapper;
 using Microsoft.AspNet.Identity;
@@ -14,12 +15,15 @@ namespace AppSK.Controllers
     {
         private readonly IStocksService _stocksService;
         private readonly IManagersService _managersService;
+        private readonly IMarksService _marksService;
 
         public StocksController(IStocksService stocksService,
+            IMarksService marksService,
             IManagersService managersService)
         {
             _stocksService = stocksService;
             _managersService = managersService;
+            _marksService = marksService;
         }
 
         [HttpGet]
@@ -35,6 +39,7 @@ namespace AppSK.Controllers
         {
             var stock = _stocksService.GetStock(stockId);
             var viewStock = Mapper.Map<StockModel>(stock);
+            viewStock.Mark = Mapper.Map<MarkModel>(_marksService.GetMarkByStock(stockId));
             return View(viewStock);
         }
 

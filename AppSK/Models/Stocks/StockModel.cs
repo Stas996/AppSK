@@ -1,4 +1,5 @@
 ﻿using AppSK.Models.Managers;
+using AppSK.Models.Marks;
 using System;
 
 namespace AppSK.Models.Stocks
@@ -22,5 +23,7 @@ namespace AppSK.Models.Stocks
         public DateTime PurchaseDate { get; set; }
 
         public DateTime SaleDate { get; set; }
+
+        public MarkModel Mark { get; set; }
     }
 }

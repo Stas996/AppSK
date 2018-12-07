@@ -31,12 +31,12 @@ namespace AppSK.BLL.Services
 
         public Mark GetMarkByProject(int projectId)
         {
-            return _marksRepository.GetBy(x => x.ProjectId.Value == projectId).FirstOrDefault();
+            return _marksRepository.GetBy(x => x.ProjectId.HasValue && x.ProjectId.Value == projectId).FirstOrDefault();
         }
 
         public Mark GetMarkByStock(int stockId)
         {
-            return _marksRepository.GetBy(x => x.StockId.Value == stockId).FirstOrDefault();
+            return _marksRepository.GetBy(x => x.StockId.HasValue && x.StockId.Value == stockId).FirstOrDefault();
         }
 
         public int Save(Mark mark)

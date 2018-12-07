@@ -13,6 +13,11 @@
     <strong>Дата продажи:</strong>
     @Model.SaleDate.ToShortDateString()
 </div>
+@if (Model.Mark != null)
+{
+    <hr />
+    @Html.Partial("~/Views/Marks/_Details.cshtml", Model.Mark);
+}
 <hr />
 @Html.ActionLink("Редактировать", "Edit", "Stocks", new { stockId = Model.Id }, new { @class = "btn-sm btn-success" })
 <span> | </span>

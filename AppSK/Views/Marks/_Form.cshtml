@@ -3,6 +3,8 @@
 
 <div>
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(x => x.ProjectId)
+    @Html.HiddenFor(x => x.StockId)
     <div class="form-group">
         @Html.EditorFor(model => model.Risk, new { htmlAttributes = new { @placeholder = "Ожидаемый доход (NPV)", @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Risk, "", new { @class = "text-danger" })

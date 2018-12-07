@@ -1,5 +1,6 @@
 ﻿using AppSK.BLL.Core;
 using AppSK.DAL.Entities;
+using AppSK.Models.Marks;
 using AppSK.Models.Projects;
 using AutoMapper;
 using Microsoft.AspNet.Identity;
@@ -14,11 +15,14 @@ namespace AppSK.Controllers
     {
         private readonly IProjectsService _projectsService;
         private readonly IManagersService _managersService;
+        private readonly IMarksService _marksService;
 
         public ProjectsController(
             IProjectsService projectsService,
+            IMarksService marksService,
             IManagersService managersService)
         {
+            _marksService = marksService;
             _projectsService = projectsService;
             _managersService = managersService;
         }
@@ -36,6 +40,7 @@ namespace AppSK.Controllers
         {
             var project = _projectsService.GetProject(projectId);
             var viewProject = Mapper.Map<ProjectModel>(project);
+            viewProject.Mark = Mapper.Map<MarkModel>(_marksService.GetMarkByProject(projectId));
             return View(viewProject);
         }
 

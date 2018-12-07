@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using AppSK.DAL.Entities.Enums
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -27,6 +28,10 @@
                     {
                         <li>@Html.ActionLink("Управление проектами", "Index", "Projects")</li>
                         <li>@Html.ActionLink("Управление акциями", "Index", "Stocks")</li>
+                        if (User.IsInRole(RoleNames.Manager))
+                        {
+                            <li>@Html.ActionLink("Формирование портфеля", "Index", "Portfolio")</li>
+                        }
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -36,8 +41,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-        </footer>
+        <footer></footer>
     </div>
     @RenderSection("scripts", required: false)
 </body>

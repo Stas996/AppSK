@@ -201,6 +201,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarksController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\StocksController.cs" />
     <Compile Include="Global.asax.cs">
@@ -213,6 +214,7 @@
     <Compile Include="Models\Managers\ManagerItemModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Marks\MarkModel.cs" />
+    <Compile Include="Models\Portfolio\PortfolioModel.cs" />
     <Compile Include="Models\Projects\ProjectModel.cs" />
     <Compile Include="Models\Stocks\StockModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -375,6 +377,8 @@
     <Content Include="Views\Marks\ProjectDetails.cshtml" />
     <Content Include="Views\Marks\StockDetails.cshtml" />
     <Content Include="Views\Marks\_Form.cshtml" />
+    <Content Include="Views\Marks\_Details.cshtml" />
+    <Content Include="Views\Portfolio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
