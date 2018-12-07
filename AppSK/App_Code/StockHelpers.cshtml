@@ -23,6 +23,10 @@
                 <td>@s.SaleDate.ToShortDateString()</td>
                 <td class="pull-right">
                     @Html.ActionLink("Просмотр", "Details", "Stocks", new { stockId = s.Id }, new { @class = "btn-sm btn-success" })
+                    @if (User.IsInRole(RoleNames.Expert))
+                    {
+                        @Html.ActionLink("Оценка", "StockDetails", "Marks", new { stockId = s.Id }, new { @class = "btn-sm btn-danger" })
+                    }
                     @if (User.IsInRole(RoleNames.Manager))
                     {
                         @Html.ActionLink("Редактировать", "Edit", "Stocks", new { stockId = s.Id }, new { @class = "btn-sm btn-warning" })

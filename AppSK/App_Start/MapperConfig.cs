@@ -1,6 +1,7 @@
 ﻿using AppSK.DAL.Entities;
 using AppSK.Models.Identity;
 using AppSK.Models.Managers;
+using AppSK.Models.Marks;
 using AppSK.Models.Projects;
 using AppSK.Models.Stocks;
 using AutoMapper;
@@ -18,6 +19,9 @@ namespace AppSK.App_Start
 
                 config.CreateMap<Stock, StockModel>();
                 config.CreateMap<StockModel, Stock>();
+
+                config.CreateMap<Mark, MarkModel>();
+                config.CreateMap<MarkModel, Mark>();
 
                 config.CreateMap<Manager, ManagerItemModel>();
 

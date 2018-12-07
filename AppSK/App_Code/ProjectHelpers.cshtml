@@ -25,6 +25,10 @@
                 <td>@p.FinishDate.ToShortDateString()</td>
                 <td class="pull-right">
                     @Html.ActionLink("Просмотр", "Details", "Projects", new { projectId = p.Id }, new { @class = "btn-sm btn-success" })
+                    @if (User.IsInRole(RoleNames.Expert))
+                    {
+                        @Html.ActionLink("Оценка", "ProjectDetails", "Marks", new { projectId = p.Id }, new { @class = "btn-sm btn-danger" })
+                    }
                     @if (User.IsInRole(RoleNames.Manager))
                     {
                         @Html.ActionLink("Редактировать", "Edit", "Projects", new { projectId = p.Id }, new { @class = "btn-sm btn-warning" })

@@ -24,6 +24,11 @@ namespace AppSK.BLL.Services
             return _expertsRepository.GetById(id);
         }
 
+        public Expert GetExpertByUserId(string id)
+        {
+            return _expertsRepository.GetBy(x => x.UserId == id).FirstOrDefault();
+        }
+
         public IQueryable<Expert> GetExperts()
         {
             return _expertsRepository.GetAll();

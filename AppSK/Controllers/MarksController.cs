@@ -32,20 +32,24 @@ namespace AppSK.Controllers
         [HttpGet]
         public ActionResult StockDetails(int stockId)
         {
-            var mark = _marksService.GetMarkByProject(stockId);
+            var mark = _marksService.GetMarkByStock(stockId);
             var viewMark = Mapper.Map<MarkModel>(mark);
             return View(viewMark);
         }
 
         [HttpPost]
-        public ActionResult Create(MarkModel markModel)
+        public ActionResult Save(MarkModel markModel)
         {
-            var expert = GetCurrentExpert();
-            markModel.ExpertId = expert.Id;
+            var mark = Mapper.Map<Mark>(markModel);
+            var controllerRedirectName = markModel.ProjectId.HasValue ? "Projects" : "Stocks";
+            if (mark.IsNew)
+            {
+                var expert = GetCurrentExpert();
+                markModel.ExpertId = expert.Id;
+            }
 
-            var project = Mapper.Map<Project>(projectModel);
-            var projects = _projectsService.Save(project);
-            return RedirectToAction("Index");
+            var projects = _marksService.Save(mark);
+            return RedirectToAction("Index", controllerRedirectName);
         }
 
         private Expert GetCurrentExpert()

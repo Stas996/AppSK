@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201812062158512_Add_Manager_To_Stocks.Designer.cs">
       <DependentUpon>201812062158512_Add_Manager_To_Stocks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812070605281_Update_Marks.cs" />
+    <Compile Include="Migrations\201812070605281_Update_Marks.Designer.cs">
+      <DependentUpon>201812070605281_Update_Marks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
@@ -101,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812062158512_Add_Manager_To_Stocks.resx">
       <DependentUpon>201812062158512_Add_Manager_To_Stocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812070605281_Update_Marks.resx">
+      <DependentUpon>201812070605281_Update_Marks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

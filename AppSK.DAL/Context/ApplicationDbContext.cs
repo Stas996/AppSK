@@ -34,10 +34,6 @@ namespace AppSK.DAL.Context
             modelBuilder.Entity<Expert>()
                 .HasMany(x => x.Marks)
                 .WithRequired(x => x.Expert);
-
-            modelBuilder.Entity<Project>()
-                .HasMany(p => p.Marks)
-                .WithRequired(x => x.Project);
         }
 
         public static ApplicationDbContext Create()

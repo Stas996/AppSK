@@ -1,5 +1,6 @@
 ﻿using AppSK.DAL.Entities.Enums;
 using AppSK.Models.Managers;
+using AppSK.Models.Marks;
 using System;
 
 namespace AppSK.Models.Projects
@@ -30,5 +31,6 @@ namespace AppSK.Models.Projects
 
         public int Investments { get; set; }
 
+        public MarkModel Mark { get; set; }
     }
 }

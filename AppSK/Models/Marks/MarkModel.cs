@@ -2,6 +2,8 @@
 {
     public class MarkModel
     {
+        public int Id { get; set; }
+
         public int ExpertId { get; set; }
 
         public int? ProjectId { get; set; }
