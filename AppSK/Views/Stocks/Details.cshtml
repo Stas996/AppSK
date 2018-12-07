@@ -1,0 +1,19 @@
+﻿@model AppSK.Models.Stocks.StockModel
+@{
+    ViewBag.Title = $"Акция {Model.Code}";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+<div>
+    <strong>Дата покупки:</strong>
+    @Model.PurchaseDate.ToShortDateString()
+</div>
+<div>
+    <strong>Дата продажи:</strong>
+    @Model.SaleDate.ToShortDateString()
+</div>
+<hr />
+@Html.ActionLink("Редактировать", "Edit", "Stocks", new { stockId = Model.Id }, new { @class = "btn-sm btn-success" })
+<span> | </span>
+@Html.ActionLink("Удалить", "Delete", "Stocks", new { stockId = Model.Id }, new { @class = "btn-sm btn-danger" })

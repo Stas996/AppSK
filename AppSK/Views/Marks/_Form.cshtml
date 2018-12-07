@@ -1,0 +1,32 @@
+﻿
+@model AppSK.Models.Marks.MarkModel
+
+<div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.EditorFor(model => model.Risk, new { htmlAttributes = new { @placeholder = "Ожидаемый риск", @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Risk, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.EditorFor(model => model.NPV, new { htmlAttributes = new { @placeholder = "Ожидаемый риск", @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.NPV, "", new { @class = "text-danger" })
+    </div>
+    <h4>Развитие</h4>
+    <div class="form-group">
+        @Html.EditorFor(model => model.Factor1, new { htmlAttributes = new { @placeholder = "Фактор 1", @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Factor1, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.EditorFor(model => model.Factor2, new { htmlAttributes = new { @placeholder = "Фактор 2", @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Factor2, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.EditorFor(model => model.Factor3, new { htmlAttributes = new { @placeholder = "Фактор 3", @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Factor3, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <div>
+            <input type="submit" value="Сохранить" class="btn btn-success" />
+        </div>
+    </div>
+</div>

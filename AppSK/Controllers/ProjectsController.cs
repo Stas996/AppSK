@@ -15,7 +15,8 @@ namespace AppSK.Controllers
         private readonly IProjectsService _projectsService;
         private readonly IManagersService _managersService;
 
-        public ProjectsController(IProjectsService projectsService,
+        public ProjectsController(
+            IProjectsService projectsService,
             IManagersService managersService)
         {
             _projectsService = projectsService;

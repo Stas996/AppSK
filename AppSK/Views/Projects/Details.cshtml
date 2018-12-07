@@ -8,6 +8,14 @@
 <div>
     @Model.Description
 </div>
+<div>
+    <strong>Дата старта:</strong>
+    @Model.StartDate.ToShortDateString()
+</div>
+<div>
+    <strong>Дата завершения:</strong>
+    @Model.FinishDate.ToShortDateString()
+</div>
 <hr />
 @Html.ActionLink("Редактировать", "Edit", "Projects", new { projectId = Model.Id }, new { @class = "btn-sm btn-success" })
 <span> | </span>

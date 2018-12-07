@@ -1,0 +1,17 @@
+﻿@using AppSK.Models.Stocks
+@{
+    ViewBag.Title = "Новая акция";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="ms ms-form-area col-md-12">
+        @using (Html.BeginForm("Create", "Stocks", FormMethod.Post))
+        {
+
+            @Html.AntiForgeryToken()
+            @Html.Partial("_Form", new StockModel())
+        }
+    </div>
+</div>

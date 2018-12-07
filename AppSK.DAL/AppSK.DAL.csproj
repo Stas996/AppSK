@@ -62,6 +62,7 @@
     <Compile Include="Entities\Manager.cs" />
     <Compile Include="Entities\Mark.cs" />
     <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\Stock.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\201812042228049_Init.cs" />
     <Compile Include="Migrations\201812042228049_Init.Designer.cs">
@@ -70,6 +71,14 @@
     <Compile Include="Migrations\201812050319402_ChangeUserModel.cs" />
     <Compile Include="Migrations\201812050319402_ChangeUserModel.Designer.cs">
       <DependentUpon>201812050319402_ChangeUserModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812062144272_Add_Stocks.cs" />
+    <Compile Include="Migrations\201812062144272_Add_Stocks.Designer.cs">
+      <DependentUpon>201812062144272_Add_Stocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812062158512_Add_Manager_To_Stocks.cs" />
+    <Compile Include="Migrations\201812062158512_Add_Manager_To_Stocks.Designer.cs">
+      <DependentUpon>201812062158512_Add_Manager_To_Stocks.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +95,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812050319402_ChangeUserModel.resx">
       <DependentUpon>201812050319402_ChangeUserModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812062144272_Add_Stocks.resx">
+      <DependentUpon>201812062144272_Add_Stocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812062158512_Add_Manager_To_Stocks.resx">
+      <DependentUpon>201812062158512_Add_Manager_To_Stocks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

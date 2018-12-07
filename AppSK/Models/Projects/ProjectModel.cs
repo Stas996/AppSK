@@ -6,6 +6,12 @@ namespace AppSK.Models.Projects
 {
     public class ProjectModel
     {
+        public ProjectModel()
+        {
+            StartDate = DateTime.Now;
+            FinishDate = DateTime.Now.AddMonths(1);
+        }
+
         public int Id { get; set; }
 
         public int ManagerId { get; set; }

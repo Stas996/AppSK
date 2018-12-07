@@ -8,8 +8,10 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th style="width:30%">Название</th>
-                <th style="width:40%">Описание</th>
+                <th style="width:15%">Название</th>
+                <th style="width:20%">Описание</th>
+                <th style="width:10%">Дата старта</th>
+                <th style="width:10%">Дата конца</th>
                 <th></th>
             </tr>
         </thead>
@@ -19,7 +21,9 @@
             <tr>
                 <td>@p.Title</td>
                 <td>@p.Description</td>
-                <td>
+                <td>@p.StartDate.ToShortDateString()</td>
+                <td>@p.FinishDate.ToShortDateString()</td>
+                <td class="pull-right">
                     @Html.ActionLink("Просмотр", "Details", "Projects", new { projectId = p.Id }, new { @class = "btn-sm btn-success" })
                     @if (User.IsInRole(RoleNames.Manager))
                     {
@@ -27,7 +31,7 @@
                         @Html.ActionLink("Удалить", "Delete", "Projects", new { projectId = p.Id }, new { @class = "btn-sm btn-danger" })
                     }
                 </td>
-                </tr>
+            </tr>
             }
         </tbody>
     </table>

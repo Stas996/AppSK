@@ -1,0 +1,36 @@
+﻿@using System.Web.Mvc.Html
+@using AppSK.Models.Stocks
+@using AppSK.DAL.Entities.Enums
+
+@helper StocksList(IEnumerable<StockModel> stocks)
+{
+    var Html = ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Html;
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width:20%">Код</th>
+                <th style="width:20%">Дата покупки</th>
+                <th style="width:20%">Дата продажи</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in stocks)
+            {
+            <tr>
+                <td>@s.Code</td>
+                <td>@s.PurchaseDate.ToShortDateString()</td>
+                <td>@s.SaleDate.ToShortDateString()</td>
+                <td class="pull-right">
+                    @Html.ActionLink("Просмотр", "Details", "Stocks", new { stockId = s.Id }, new { @class = "btn-sm btn-success" })
+                    @if (User.IsInRole(RoleNames.Manager))
+                    {
+                        @Html.ActionLink("Редактировать", "Edit", "Stocks", new { stockId = s.Id }, new { @class = "btn-sm btn-warning" })
+                        @Html.ActionLink("Удалить", "Delete", "Stocks", new { stockId = s.Id }, new { @class = "btn-sm btn-danger" })
+                    }
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}

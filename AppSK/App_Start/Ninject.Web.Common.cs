@@ -62,6 +62,7 @@ namespace AppSK.App_Start
             kernel.Bind<IMarksService>().To<MarksService>().InRequestScope();
             kernel.Bind<IManagersService>().To<ManagersService>().InRequestScope();
             kernel.Bind<IExpertsService>().To<ExpertsService>().InRequestScope();
+            kernel.Bind<IStocksService>().To<StocksService>().InRequestScope();
         }        
     }
 }

@@ -7,6 +7,10 @@ namespace AppSK.BLL.Core
     {
         IQueryable<Mark> GetMarks();
 
+        Mark GetMarkByProject(int projectId);
+
+        Mark GetMarkByStock(int stockId);
+
         Mark GetMark(int id);
 
         int Save(Mark mark);

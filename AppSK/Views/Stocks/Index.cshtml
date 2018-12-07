@@ -1,0 +1,18 @@
+﻿@model IEnumerable<AppSK.Models.Stocks.StockModel>
+@{
+    ViewBag.Title = "Управление акциями";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>@Html.ActionLink("Добавить акцию", "Create", "Stocks")</p>
+<hr />
+@if (Model.Count() > 0)
+{
+    @StockHelpers.StocksList(Model);
+}
+else
+{
+    <div class="ms-empty">
+        <span class="text-center">Список акций пуст</span>
+    </div>
+}

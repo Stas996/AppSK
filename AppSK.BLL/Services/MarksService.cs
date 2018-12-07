@@ -29,6 +29,16 @@ namespace AppSK.BLL.Services
             return _marksRepository.GetById(id);
         }
 
+        public Mark GetMarkByProject(int projectId)
+        {
+            return _marksRepository.GetBy(x => x.ProjectId.Value == projectId).FirstOrDefault();
+        }
+
+        public Mark GetMarkByStock(int stockId)
+        {
+            return _marksRepository.GetBy(x => x.StockId.Value == stockId).FirstOrDefault();
+        }
+
         public int Save(Mark mark)
         {
             if (mark.IsNew)

@@ -9,6 +9,8 @@ namespace AppSK.BLL.Core
 
         Expert GetExpert(int id);
 
+        Expert GetExpertByUserId(string id);
+
         int Save(Expert expert);
 
         void Delete(int id);
