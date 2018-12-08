@@ -9,6 +9,7 @@ namespace AppSK.DAL.Context
         public ApplicationDbContext()
             : base("AppSKConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new DbInitializer());
         }
 
         public DbSet<Manager> Managers { get; set; }

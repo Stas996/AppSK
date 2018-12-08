@@ -64,6 +64,7 @@
     <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\Stock.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="DbInitializer.cs" />
     <Compile Include="Migrations\201812042228049_Init.cs" />
     <Compile Include="Migrations\201812042228049_Init.Designer.cs">
       <DependentUpon>201812042228049_Init.cs</DependentUpon>
