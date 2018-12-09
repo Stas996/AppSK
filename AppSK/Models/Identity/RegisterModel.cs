@@ -1,4 +1,5 @@
-﻿using AppSK.Models.Base;
+﻿using AppSK.DAL.Entities.Enums;
+using AppSK.Models.Base;
 using System.ComponentModel.DataAnnotations;
 
 namespace AppSK.Models.Identity
@@ -13,6 +14,9 @@ namespace AppSK.Models.Identity
         [Required]
         [Display(Name = "Роль")]
         public string RoleName { get; set; }
+
+        [Display(Name = "Проекты")]
+        public ProjectTypes ProjectType { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "Минимальная длина - 6 символов.", MinimumLength = 6)]

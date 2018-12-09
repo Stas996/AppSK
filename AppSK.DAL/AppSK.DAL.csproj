@@ -56,11 +56,13 @@
   <ItemGroup>
     <Compile Include="Context\ApplicationDbContext.cs" />
     <Compile Include="Entities\Base\BaseEntity.cs" />
+    <Compile Include="Entities\Base\FinanceEntity.cs" />
     <Compile Include="Entities\Enums\ProjectTypes.cs" />
     <Compile Include="Entities\Enums\RoleNames.cs" />
     <Compile Include="Entities\Expert.cs" />
     <Compile Include="Entities\Manager.cs" />
     <Compile Include="Entities\Mark.cs" />
+    <Compile Include="Entities\PortfolioInfo.cs" />
     <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\Stock.cs" />
     <Compile Include="Entities\User.cs" />
@@ -84,6 +86,10 @@
     <Compile Include="Migrations\201812070605281_Update_Marks.cs" />
     <Compile Include="Migrations\201812070605281_Update_Marks.Designer.cs">
       <DependentUpon>201812070605281_Update_Marks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812091727162_Change_Fields.cs" />
+    <Compile Include="Migrations\201812091727162_Change_Fields.Designer.cs">
+      <DependentUpon>201812091727162_Change_Fields.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812070605281_Update_Marks.resx">
       <DependentUpon>201812070605281_Update_Marks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812091727162_Change_Fields.resx">
+      <DependentUpon>201812091727162_Change_Fields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,12 +4,12 @@ namespace AppSK.Models.Identity
 {
     public class LoginModel
     {
-        [Required]
+        [Required(ErrorMessage = "Необходим E-Mail")]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Необходим пароль")]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
         public string Password { get; set; }

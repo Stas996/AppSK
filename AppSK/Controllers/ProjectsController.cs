@@ -77,9 +77,10 @@ namespace AppSK.Controllers
         public ActionResult Create(ProjectModel projectModel)
         {
             var manager = GetCurrentManager();
-            projectModel.ManagerId = manager.Id;
 
             var project = Mapper.Map<Project>(projectModel);
+            project.ManagerId = manager.Id;
+            project.Type = manager.Type;
             var projects = _projectsService.Save(project);
             return RedirectToAction("Index");
         }

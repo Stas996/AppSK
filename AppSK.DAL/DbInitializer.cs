@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace AppSK.DAL
 {
-    class DbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    class DbInitializer : CreateDatabaseIfNotExists<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {

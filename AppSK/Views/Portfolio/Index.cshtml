@@ -7,26 +7,32 @@
 @using (Html.BeginForm("Create", "Portfolio", FormMethod.Post))
 {
     <div class="form-group">
+        @Html.LabelFor(model => model.Resources)
         @Html.EditorFor(model => model.Resources, new { htmlAttributes = new { @placeholder = "Ресурсы", @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Resources, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
+        @Html.LabelFor(model => model.StartDate)
         @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @placeholder = "Начало", @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
+        @Html.LabelFor(model => model.FinishDate)
         @Html.EditorFor(model => model.FinishDate, new { htmlAttributes = new { @placeholder = "Конец", @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.FinishDate, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
+        @Html.LabelFor(model => model.Factor1)
         @Html.EditorFor(model => model.Factor1, new { htmlAttributes = new { @placeholder = "Фактор 1", @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Factor1, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
+        @Html.LabelFor(model => model.Factor2)
         @Html.EditorFor(model => model.Factor2, new { htmlAttributes = new { @placeholder = "Фактор 2", @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Factor2, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
+        @Html.LabelFor(model => model.Factor3)
         @Html.EditorFor(model => model.Factor3, new { htmlAttributes = new { @placeholder = "Фактор 3", @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Factor3, "", new { @class = "text-danger" })
     </div>
@@ -38,7 +44,11 @@
 }
 <script>
     $(function () {
-        $('#StartDate').datetimepicker();
-        $('#FinishDate').datetimepicker();
+        $('#StartDate').datetimepicker({
+            format: 'DD/MM/YYYY'
+        });
+        $('#FinishDate').datetimepicker({
+            format: 'DD/MM/YYYY'
+        });
     });
 </script>

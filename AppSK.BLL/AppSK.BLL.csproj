@@ -78,8 +78,10 @@
     <Compile Include="Core\IExpertsService.cs" />
     <Compile Include="Core\IManagersService.cs" />
     <Compile Include="Core\IMarksService.cs" />
+    <Compile Include="Core\IPortfolioService.cs" />
     <Compile Include="Core\IProjectsService.cs" />
     <Compile Include="Core\IStocksService.cs" />
+    <Compile Include="Dto\PortfolioDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ExpertsService.cs" />
     <Compile Include="Services\Identity\ApplicationSignInManager.cs" />
@@ -87,8 +89,10 @@
     <Compile Include="Services\Identity\EmailService.cs" />
     <Compile Include="Services\ManagersService.cs" />
     <Compile Include="Services\MarksService.cs" />
+    <Compile Include="Services\PortfolioService.cs" />
     <Compile Include="Services\ProjectsService.cs" />
     <Compile Include="Services\StocksService.cs" />
+    <Compile Include="Utils\ContentPatterns.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppSK.DAL\AppSK.DAL.csproj">

@@ -1,4 +1,5 @@
-﻿@model AppSK.Models.Stocks.StockModel
+﻿@using AppSK.DAL.Entities.Enums
+@model AppSK.Models.Stocks.StockModel
 @{
     ViewBag.Title = $"Акция {Model.Code}";
 }
@@ -7,18 +8,21 @@
 <hr />
 <div>
     <strong>Дата покупки:</strong>
-    @Model.PurchaseDate.ToShortDateString()
+    @Model.StartDate.ToShortDateString()
 </div>
 <div>
     <strong>Дата продажи:</strong>
-    @Model.SaleDate.ToShortDateString()
+    @Model.FinishDate.ToShortDateString()
 </div>
 @if (Model.Mark != null)
 {
     <hr />
     @Html.Partial("~/Views/Marks/_Details.cshtml", Model.Mark);
 }
-<hr />
-@Html.ActionLink("Редактировать", "Edit", "Stocks", new { stockId = Model.Id }, new { @class = "btn-sm btn-success" })
-<span> | </span>
-@Html.ActionLink("Удалить", "Delete", "Stocks", new { stockId = Model.Id }, new { @class = "btn-sm btn-danger" })
+@if (User.IsInRole(RoleNames.Manager))
+{
+    <hr />
+    @Html.ActionLink("Редактировать", "Edit", "Stocks", new { stockId = Model.Id }, new { @class = "btn-sm btn-success" })
+    <span> | </span>
+    @Html.ActionLink("Удалить", "Delete", "Stocks", new { stockId = Model.Id }, new { @class = "btn-sm btn-danger" })
+}

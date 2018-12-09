@@ -2,6 +2,7 @@
 using AppSK.Models.Managers;
 using AppSK.Models.Marks;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AppSK.Models.Projects
 {
@@ -19,17 +20,27 @@ namespace AppSK.Models.Projects
 
         public ManagerItemModel Manager { get; set; }
 
+        [Display(Name = "Тип проекта")]
         public ProjectTypes Type { get; set; }
 
+        [Required(ErrorMessage = "Необходимо название проекта")]
+        [Display(Name = "Название")]
         public string Title { get; set; }
 
+        [Display(Name = "Описание проекта")]
         public string Description { get; set; }
 
+        [Required(ErrorMessage = "Необходима дата старта")]
+        [Display(Name = "Дата старта")]
         public DateTime StartDate { get; set; }
 
+        [Required(ErrorMessage = "Необходима дата окончания")]
+        [Display(Name = "Дата окончания")]
         public DateTime FinishDate { get; set; }
 
-        public int Investments { get; set; }
+        [Required]
+        [Display(Name = "Инвестиции (грн)")]
+        public decimal Investments { get; set; }
 
         public MarkModel Mark { get; set; }
     }

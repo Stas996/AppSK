@@ -1,18 +1,9 @@
 ﻿using AppSK.DAL.Entities.Base;
-using System;
 
 namespace AppSK.DAL.Entities
 {
-    public class Stock : BaseEntity
+    public class Stock : FinanceEntity
     {
-        public int ManagerId { get; set; }
-
-        public Manager Manager { get; set; }
-
         public string Code { get; set; }
-
-        public DateTime PurchaseDate { get; set; }
-
-        public DateTime SaleDate { get; set; }
     }
 }

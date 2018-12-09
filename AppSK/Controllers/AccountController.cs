@@ -158,7 +158,7 @@ namespace AppSK.Controllers
                     await UserManager.AddToRoleAsync(user.Id, model.RoleName);
                     if (model.RoleName == RoleNames.Manager)
                     {
-                        _managersService.Save(new Manager { UserId = user.Id });
+                        _managersService.Save(new Manager { UserId = user.Id, Type = model.ProjectType });
                     }
                     if (model.RoleName == RoleNames.Expert)
                     {
@@ -335,7 +335,7 @@ namespace AppSK.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Projects");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

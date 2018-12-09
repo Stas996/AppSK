@@ -1,18 +1,35 @@
-﻿@model AppSK.Models.Projects.ProjectModel
+﻿@using AppSK.DAL.Entities.Enums
+@model AppSK.Models.Projects.ProjectModel
 @{
     ViewBag.Title = Model.Title;
 }
 
 <h2>@ViewBag.Title</h2>
 <hr />
-<div>
+<div style="margin-top: 5px;">
+    <strong>Тип проекта:</strong>
+    @if (Model.Type == ProjectTypes.External)
+    {
+        <span>Внешний</span>
+    }
+    else
+    {
+        <span>Внутренний</span>
+    }
+</div>
+<div style="margin-top: 5px;">
+    <strong>Описание:</strong>
     @Model.Description
 </div>
-<div>
+<div style="margin-top: 5px;">
+    <strong>Инвестиции (грн):</strong>
+    @Model.Investments
+</div>
+<div style="margin-top: 5px;">
     <strong>Дата старта:</strong>
     @Model.StartDate.ToShortDateString()
 </div>
-<div>
+<div style="margin-top: 5px;">
     <strong>Дата завершения:</strong>
     @Model.FinishDate.ToShortDateString()
 </div>
@@ -22,6 +39,9 @@
     @Html.Partial("~/Views/Marks/_Details.cshtml", Model.Mark);
 }
 <hr />
-@Html.ActionLink("Редактировать", "Edit", "Projects", new { projectId = Model.Id }, new { @class = "btn-sm btn-success" })
-<span> | </span>
-@Html.ActionLink("Удалить", "Delete", "Projects", new { projectId = Model.Id }, new { @class = "btn-sm btn-danger" })
+@if (User.IsInRole(RoleNames.Manager))
+{
+    @Html.ActionLink("Редактировать", "Edit", "Projects", new { projectId = Model.Id }, new { @class = "btn-sm btn-success" })
+    <span> | </span>
+    @Html.ActionLink("Удалить", "Delete", "Projects", new { projectId = Model.Id }, new { @class = "btn-sm btn-danger" })
+}

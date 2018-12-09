@@ -1,7 +1,9 @@
-﻿using AppSK.DAL.Entities;
+﻿using AppSK.BLL.Dto;
+using AppSK.DAL.Entities;
 using AppSK.Models.Identity;
 using AppSK.Models.Managers;
 using AppSK.Models.Marks;
+using AppSK.Models.Portfolio;
 using AppSK.Models.Projects;
 using AppSK.Models.Stocks;
 using AutoMapper;
@@ -24,6 +26,8 @@ namespace AppSK.App_Start
                 config.CreateMap<MarkModel, Mark>();
 
                 config.CreateMap<Manager, ManagerItemModel>();
+
+                config.CreateMap<PortfolioModel, PortfolioDto>();
 
                 config.CreateMap<RegisterModel, User>()
                     .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Email));
