@@ -1,8 +1,9 @@
-﻿using AppSK.DAL.Entities.Base;
+﻿using AppSK.DAL.Entities;
+using System.Collections.Generic;
 
-namespace AppSK.DAL.Entities
+namespace AppSK.BLL.Dto
 {
-    public class PortfolioInfo : BaseEntity
+    public class GeneratedPortfolioDto
     {
         public double GeneralNPVStocks { get; set; }
 
@@ -27,5 +28,11 @@ namespace AppSK.DAL.Entities
         public double AvgExternalProjectsPriority { get; set; }
 
         public double AvgInternalProjectsPriority { get; set; }
+
+        public List<Project> InternalProjects { get; set; }
+
+        public List<Project> ExternalProjects { get; set; }
+
+        public List<Stock> Stocks { get; set; }
     }
 }

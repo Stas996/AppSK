@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AppSK.DAL.Entities.Base
 {
@@ -13,5 +14,7 @@ namespace AppSK.DAL.Entities.Base
         public DateTime FinishDate { get; set; }
 
         public decimal Investments { get; set; }
+
+        public virtual List<Mark> Marks { get; set; }
     }
 }

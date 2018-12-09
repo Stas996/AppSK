@@ -52,11 +52,8 @@ namespace AppSK.Controllers
         {
             var mark = Mapper.Map<Mark>(markModel);
             var controllerRedirectName = markModel.ProjectId.HasValue ? "Projects" : "Stocks";
-            if (mark.IsNew)
-            {
-                var expert = GetCurrentExpert();
-                mark.ExpertId = expert.Id;
-            }
+            var expert = GetCurrentExpert();
+            mark.ExpertId = expert.Id;
 
             var projects = _marksService.Save(mark);
             return RedirectToAction("Index", controllerRedirectName);

@@ -1,10 +1,14 @@
-﻿@model IEnumerable<AppSK.Models.Stocks.StockModel>
+﻿@using AppSK.DAL.Entities.Enums
+@model IEnumerable<AppSK.Models.Stocks.StockModel>
 @{
     ViewBag.Title = "Управление акциями";
 }
 
 <h2>@ViewBag.Title</h2>
-<p>@Html.ActionLink("Добавить акцию", "Create", "Stocks")</p>
+@if (User.IsInRole(RoleNames.Manager))
+{
+    <p>@Html.ActionLink("Добавить акцию", "Create", "Stocks")</p>
+}
 <hr />
 @if (Model.Count() > 0)
 {

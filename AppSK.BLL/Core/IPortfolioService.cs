@@ -1,13 +1,12 @@
 ﻿using AppSK.BLL.Dto;
-using AppSK.DAL.Entities;
-using System.Collections.Generic;
+using System.IO;
 
 namespace AppSK.BLL.Core
 {
     public interface IPortfolioService
     {
-        byte[] GeneratePdf(PortfolioDto portfolio);
+        MemoryStream GeneratePdf(GeneratedPortfolioDto portfolio);
 
-        List<Project> Calculate(PortfolioDto portfolio);
+        GeneratedPortfolioDto Calculate(PortfolioDto portfolio);
     }
 }

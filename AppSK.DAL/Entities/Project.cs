@@ -11,7 +11,5 @@ namespace AppSK.DAL.Entities
         public string Title { get; set; }
 
         public string Description { get; set; }
-
-        public List<Mark> Marks { get; set; }
     }
 }

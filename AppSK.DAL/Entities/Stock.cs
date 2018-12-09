@@ -1,4 +1,5 @@
 ﻿using AppSK.DAL.Entities.Base;
+using System.Collections.Generic;
 
 namespace AppSK.DAL.Entities
 {
